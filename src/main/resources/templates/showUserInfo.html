@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+<!-- 上記の記述でtymeleaf用の属性が使えるようになる  -->
+<head>
+<meta charset="UTF-8">
+<title>demo show</title>
+</head>
+<body>
+
+<p th:text="'ようこそ！' + ${user.userName} + 'さん！'"></p>
+<p th:text="'パスワード : ' + ${user.userPass}"></p>
+<p th:text="'住所 : ' + ${user.address}"></p>
+<p th:text="'メールアドレス : ' + ${user.mail}"></p>
+
+</body>
+</html>

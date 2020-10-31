@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+<!-- 上記の記述でtymeleaf用の属性が使えるようになる  -->
+<head>
+<meta charset="UTF-8">
+<title>demo show</title>
+</head>
+<body>
+
+  <form th:action="@{/show}" th:object="${employeeForm}" method="post">
+    <p>従業員検索</p>
+    <div th:text="*{id}"></div>
+    <div th:text="*{name}"></div>
+    <div th:text="*{email}"></div>
+  </form>
+
+  <!--
+  <h1 th:text="${message}"></h1>
+  <p>[[${message}]]</p>
+  <p th:text="'文字列' + '連結'"></p>
+  <p th:text="|messageは : ${message}|"></p>
+  <p th:text="3 * 6"></p>
+  <p th:text="true
+              and false
+              or true
+              and not true
+              or !false"></p>
+  <p th:text="'1 < 10は : ' + (1 < 10)"></p>
+  <p th:text="1 == 10"></p>
+   -->
+
+</body>
+</html>
