@@ -1,30 +1,37 @@
 package com.example.probook.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.example.probook.dao.UserRepository;
-import com.example.probook.dto.User;
+import com.example.probook.dao.UserDao;
+import com.example.probook.dto.UserDto;
 
 @Service
 @Transactional
 public class UserService {
 
-  // UserRepositoryは勝手に実装クラスが作られるのでインスタンス化しなくていいらしい？
-  // Autowiredが何やってるのかよくわからん
+  // UserDaoは勝手に実装クラスが作られるのでインスタンス化しなくていい
+  // Autowiredが何やってるのかよくわからん=>たぶんnew UserDaoImpl()してるだけ
   @Autowired
-  UserRepository userRepository;
+  UserDao userDao;
 
-  public List<User> getUsers() {
-    return userRepository.selectAll();
+  /*
+  public List<UserDto> getUsers() {
+    return userDao.selectAll();
+  }
+  */
+
+  public UserDto findUserById(String userId) {
+    return userDao.findUserById(userId);
   }
 
-  public User getUserInfo(String userId) {
-    return userRepository.selectUserInfo(userId);
+  public UserDto findUserByUsername(String username) {
+    return userDao.findUserByUsername(username);
+  }
+
+  public UserDto findUserByMail(String mail) {
+    return userDao.findUserByMail(mail);
   }
 
 }

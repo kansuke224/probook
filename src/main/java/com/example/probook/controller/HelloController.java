@@ -1,15 +1,14 @@
 package com.example.probook.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.stereotype.Controller;
 
-import com.example.probook.dto.User;
+import com.example.probook.dto.UserDto;
 import com.example.probook.service.UserService;
 
 // RestControllerとは？
@@ -35,11 +34,32 @@ public class HelloController {
   // @RequestParams()などを使い、クエリパラメータや、postなどの値を取得することができるらしい
   @RequestMapping("/user/{userId}")
   private ModelAndView showUserInfo(@PathVariable("userId") String userId ,ModelAndView mav) {
-    User user = userService.getUserInfo(userId);
+    UserDto user = userService.findUserById(userId);
+
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    //Principalからログインユーザの情報を取得
+    String userName = auth.getName();
+
+    System.out.println(auth);
+
+    user.userName = userName + "認証済み";
 
     mav.addObject("user", user);
-    mav.setViewName("showUserInfo");
+    mav.setViewName("demo/showUserInfo");
     return mav;
   }
+
+  @RequestMapping("/hello")
+  private ModelAndView hello(ModelAndView mav) {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    String userName = auth.getName();
+
+    UserDto dto = userService.findUserByUsername(userName);
+
+    mav.addObject("user", dto);
+    mav.setViewName("demo/showUserInfo");
+    return mav;
+  }
+
 
 }
