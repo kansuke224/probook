@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.example.probook.dao;
 
 import java.util.List;
 
@@ -7,8 +7,7 @@ import org.seasar.doma.boot.ConfigAutowireable;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-/*import com.example.demo.config.DefaultDomaConfig;*/
-import com.example.demo.model.User;
+import com.example.probook.dto.User;
 
 
 // @ConfigAutowireableでdaoの実装クラスに、@Repositoryと@Autowiredが付与されるらしい

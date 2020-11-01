@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.probook.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.User;
-import com.example.demo.repository.UserRepository;
+import com.example.probook.dao.UserRepository;
+import com.example.probook.dto.User;
 
 @Service
 @Transactional

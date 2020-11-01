@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.probook.dto;
 
 import org.seasar.doma.*;
 import org.seasar.doma.jdbc.entity.NamingType;

@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.probook.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
 
-import com.example.demo.model.User;
-import com.example.demo.service.UserService;
+import com.example.probook.dto.User;
+import com.example.probook.service.UserService;
 
 // RestControllerとは？
 // => viewに遷移せずメソッドの返り値が、そのままコンテンツになる
