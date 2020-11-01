@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+.wrap img{
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.content{
+  width: 400px;
+  /*height: 100%;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2.title{
+  margin: 96px 0;
+  font-size: 1.25rem;
+  text-align: center;
+  
+}
+
+.a{
+  width: 400px;
+  margin: 48px 0;
+}
+
+.margin{
+  margin-bottom: 48px;
+}
+.align-cen{
+  width: 550px;
+  margin: 0 auto;
+}
+
+.button-area {
+  text-align: center;
+}
+
+.user {
+  color: #000;
+  background-color: #ffff00;
+  border-radius: 100vh;
+  width:500px;
+  height:300px;
+}
+
+.login {
+  color: #000;
+  background-color: #F0F0F0;
+  border-radius: 100vh;
+  width:500px;
+  height:300px;
+}
+
+div.margin p{
+}
+
+.regi,.logi{
+  margin-bottom: 13px;
+  width: 200px;
+  height: 43px;
+  border-radius: 20px;
+  color: black;
+}
+  .btn.logi{
+    background-color: #fddc00;
+    border-color: #fddc00;
+    transition: all 0.2s ease 0s;
+  }
+    .btn.logi:hover{
+      color: black;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+      transform: translateY(-0.1875em);;
+    }
+  .btn.regi{
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+    transition: all 0.2s ease 0s;
+  }
+    .btn.regi:hover{
+      color: black;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+      transform: translateY(-0.1875em);
+    }

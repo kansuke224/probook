@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.h2-box {
+    border-bottom: 1px #AAAAAA solid;
+    padding-bottom: 10px;
+    margin: 48px 0;
+}
+    h2 {
+        font-size: 21px;
+    }
+    .h2-box-right {
+      font-size: 14px;
+      color: #7a7a7a;
+      align-self: flex-end;
+    }
+      .h2-box-right a {
+        color: #0f33cc;
+        text-decoration: none;
+      }
+      .h2-box-right a:hover {
+        text-decoration: underline;
+      }
+
+
+
+
+/*
+bootstrapのボタンを色だけ変更する
+深い青色
+*/
+.btn--blue {
+  background-color: #3e8acc;
+  border: 1px solid #307dbf;
+  color: #fff;
+}
+.btn--blue:link, .btn--blue:visited, .btn--blue:hover, .btn--blue:active {
+  color: #fff;
+}
+
+.btn--blue:hover {
+  background-color: #3270a6;
+}
+
+
+/* flexbox */
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.juco-left {
+  justify-content: left;
+}
+
+.alit-center {
+  align-items: center;
+}

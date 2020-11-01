@@ -1,0 +1,143 @@
+@charset "utf-8";
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.wrap{
+  width: 100%;
+  background-color: powderblue;
+}
+
+.content{
+  width: 1000px;
+  margin: 0 auto;
+  padding: 24px 48px;
+  background-color: white;
+}
+
+.b-tab{
+    margin-bottom: 96px;
+    border-bottom: #DDDDDD 1px solid;
+}
+
+/*------------------table----------------------*/
+.sort-area{
+    /*max-width: 850px;*/
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+th{
+    padding: 16px 0;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #F7F7F7;
+    text-align: center;
+}
+tr th:nth-child(1){
+    width: 630px;
+}
+tr th:nth-child(2){
+    width: 180px;
+}
+tr th:nth-child(3){
+    width: 180px;
+}
+
+td{
+    border-bottom: 1px solid #DDDDDD;
+}
+tr td:nth-child(1){
+    width: 530px;
+}
+tr td:nth-child(2){
+    width: 155px;
+    text-align: center;
+}
+tr td:nth-child(3){
+    width: 155px;
+    text-align: center;
+}
+td i{
+    padding: 0 20px 0 10px;
+    color: #9CEAFF;
+}
+td a{
+    padding: 16px 0;
+    display: block;
+}
+
+.status-check{
+    padding: 3px ;
+    background-color: white;
+    color: #F74157;
+    border: #F74157 solid 1px;
+    border-radius: 3px;
+}
+.status-checked{
+    color: #5cb85c;
+    border: #5cb85c solid 1px;
+}
+
+/*----------------bootstrap-button-------------------------*/
+.drop-group{
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.select-group{
+    display: flex;
+    margin-bottom: 24px;
+}
+    .select-group select{
+        margin-right: 16px;
+        width: 130px;
+    }
+
+.b-dropdown{
+    display: inline-block;
+}
+.b-radius{
+    border-radius: 2px;
+}
+.b-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b-button1 span:nth-child(1){
+    font-size: 13px;
+}
+.b-button1 span:nth-child(2){
+    font-size: 8px;
+}
+.b-button2 span:nth-child(1){
+    font-size: 13px;
+}
+.b-button2 span:nth-child(2){
+    font-size: 8px;
+}
+.b-button3{
+    width: 100px;
+    height: 100%;
+    font-size: 13px;
+}
+
+.b-button1,.b-button2{
+    padding: 0;
+    padding: 5px 0;
+    width: 80px;
+}
+.b-button2,.b-button3{
+    margin-left: 5px;
+}
+.b-button1,.b-button2,.b-button3{
+    color: black;
+    background-color: white;
+    border: #DDDDDD solid 1px;
+}

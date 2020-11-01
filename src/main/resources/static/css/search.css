@@ -1,0 +1,116 @@
+@charset "utf-8";
+/*------------------デフォ-----------------------*/
+img{
+    /*width: 100%;*/
+}
+
+main{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*------検索一覧------*/
+.sarch-list{
+    padding: 48px 0 10px 0;
+    border-bottom: 1px #AAAAAA solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sarch-list p:nth-child(1){
+    font-size: 24px;
+}
+.popular-btn{
+    background-color: white;
+    color: #555555;
+}
+.popular-sarch{
+    display: flex;
+    align-items: center;
+}
+.popular-sarch p{
+    margin-right: 10px;
+    font-size: 14px!important;
+}
+/*------本------*/
+.book-contents{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.book-contents .book-item{
+    width: 25%;
+    padding: 25px;
+    margin-bottom: 24px;
+    text-decoration: none;
+    
+    transition: .3s;
+}
+/*.book-contents .book-item:hover{
+    background: #efefef;
+}*/
+
+.book-contents .book-item a:hover{
+    text-decoration: underline;
+}
+
+.book-contents .book-item p:nth-child(2){
+    font-size: 15px;
+    
+  overflow: hidden;
+  height: 50px; /* 2em（行）x line-heightの1.8 */
+  line-height: 25px;
+  color: #1F53A7;
+}
+.book-contents .book-item p:nth-child(3){
+    margin: 8px 0 15px 0;
+    font-size: 20px;
+    color: #BF0000;
+}
+.book-contents .book-item p:nth-child(4){
+    font-size: 15px;
+    color: #AAAAAA;
+}
+
+
+/*上書き修正*/
+.book-contents .book-item a.a-book-title {
+    font-size: 15px;
+    overflow: hidden;
+    height: 50px; /* 2em（行）x line-heightの1.8 */
+    line-height: 25px;
+    color: #1F53A7;
+}
+
+
+
+.book-contents figure{
+    width: 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-contents figure img{
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 250px;
+}
+
+/*--------下--------*/
+.sarch-list-bottom{
+    padding-bottom: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* main上書き */
+h2 {
+    width: 160px;
+}

@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+body{
+  color: #000;
+  text-align: left;
+  line-height: 1;
+  background-color: #fff;
+}
+
+.wrap{
+    width: 100%;
+}
+
+/*----------ヘッダー----------*/
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3355b1+0,170e5a+100 */
+background: rgb(51,85,177); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(51,85,177,1) 0%, rgba(23,14,90,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(51,85,177,1) 0%,rgba(23,14,90,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(51,85,177,1) 0%,rgba(23,14,90,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3355b1', endColorstr='#170e5a',GradientType=0 ); /* IE6-9 */
+    position: fixed;
+    z-index: 999;
+
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+header h1{
+    margin: 0 10px;
+    font-size: 30px;
+}
+header h1 a{
+    color: white;
+}
+header h1 a:hover{
+    color: #fff;
+}
+
+header form{
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+}
+header form input{
+    width: 100%;
+    border: none;
+}
+header .dropdown-menu input {
+    width: auto;
+}
+header form button{
+    border: none;
+}
+
+header nav{
+    max-width: 180px;
+    width: 100%;
+    margin: 0 10px;
+    position: relative;
+}
+header nav ul{
+    height: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+header nav ul li{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul li a{
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+header nav ul li a i{
+    margin-bottom: 3px;
+    color: white;
+    font-size: 1.5rem;
+}
+header nav ul li a p{
+    color: white;
+}
+header form .button1 i{
+    vertical-align: middle;
+}
+/*----------search----------*/
+.input-group{
+    max-width: 550px;
+    width: 100%;
+}
+.condition-button{
+    background-color: white;
+}
+.dropdown-menu {
+    text-align: left;
+}
+.dropdown-menu02 {
+    position: absolute;
+    top: 100%;
+    left: 300px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+.dropdown-menu02.show{
+    display: block;
+}
+
+/*------------アカウント----------*/
+.account-item{
+    width: 200px;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    display: none;
+}
+.account-item a{
+    color: #3E8ACC;
+    font-size: 14px;
+    text-decoration: none;
+}
+.account-item a:nth-child(1){
+    color: black;
+}
+.account-item a i:nth-child(1){
+    color: black;
+}
+.account-item a:hover{
+    background-color: #A9D0ED;
+}
+.account-item .user_name,.logout,.mypage{
+    display: rgba(0,0,0,.15);
+    padding: 10px 0;
+    line-height: 20px;
+    display: block;
+}
+.account-item .user_name i{
+    margin: 0 10px;
+    font-size: 20px;
+}
+.user_name,.logout{
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.account-item.show{
+    transition: 1s;
+    display: block;
+}
+
+

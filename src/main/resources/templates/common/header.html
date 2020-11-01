@@ -1,0 +1,101 @@
+<header xmlns:th="http://www.thymeleaf.org" th:fragment="header_fragment">
+  <h1>
+    <a href="index.html">PROBOOK</a>
+  </h1>
+
+  <form method="post" action="search.html">
+  <div class="input-group">
+      <div class="input-group-prepend dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle condition-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">条件</button>
+        <div class="dropdown-menu p-3">
+          <div>ジャンルで検索</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              全て
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios1" value="option1">
+            <label class="form-check-label badge badge-warning text-white" for="exampleRadios1">
+              HTML
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios2" value="option2">
+            <label class="form-check-label badge badge-primary text-white" for="exampleRadios2">
+              CSS
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios3" value="option3">
+            <label class="form-check-label badge badge-warning text-white" for="exampleRadios3">
+              JavaScript
+            </label>
+          </div>
+        </div>
+        <div class="dropdown-menu02 p-3">
+          <div>ジャンルで検索</div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              全て
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios1" value="option1">
+            <label class="form-check-label badge badge-warning text-white" for="exampleRadios1">
+              HTML
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios2" value="option2">
+            <label class="form-check-label badge badge-primary text-white" for="exampleRadios2">
+              CSS
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" id="exampleRadios3" value="option3">
+            <label class="form-check-label badge badge-warning text-white" for="exampleRadios3">
+              JavaScript
+            </label>
+          </div>
+        </div>
+      </div>
+      <input type="text" class="form-control" id="search-input" placeholder="商品を検索">
+        <span class="input-group-append">
+            <button type="submit" class="btn btn-primary" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </span>
+    </div>
+  </form>
+
+  <nav>
+    <ul>
+      <li>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <p>カート</p>
+          </a>
+      </li>
+      <li>
+          <a href="mybook_list.html">
+            <i class="fas fa-book"></i>
+            <p>MYブック</p>
+          </a>
+      </li>
+      <li class="js-dropdown">
+          <a href="">
+            <i class="fas fa-user-alt"></i>
+            <p>アカウント</p>
+          </a>
+          <div class="account-item">
+              <a href="" class="user_name"><i class="fas fa-user-alt"></i>ユーザー名</a>
+              <a href="login.html" class="logout">ログアウト</a>
+              <a href="account.html" class="mypage">アカウントページ</a>
+          </div>
+      </li>
+    </ul>
+  </nav>
+</header>

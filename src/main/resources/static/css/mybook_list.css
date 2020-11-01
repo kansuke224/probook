@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.juco-left {
+  justify-content: left;
+}
+
+.book {
+  justify-content: left;
+  height: 230px;
+  margin-bottom: 48px;
+}
+  .book-top {
+    width: 100%;
+    color: #aaaaaa;
+    font-size: 15px;
+    line-height: 2rem;
+  }
+  .book-left {
+    margin-right: 16px;
+  }
+    .book-left figure{
+      width: 160px;
+      height: 190px;
+      display: flex;
+      /*justify-content: center;*/
+      align-items: center;
+    }
+    .book-left figure img{
+      width: auto;
+      height: auto;
+      max-width: 160px;
+      max-height: 190px;
+    }
+  .book-right { 
+    width: 824px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+    .book-title {
+      font-size: 20px;
+      color: #1f53a7;
+
+      overflow: hidden;
+      height: 50px; /* 2em（行）x line-heightの1.8 */
+      line-height: 25px;
+    }
+
+    .book-right-bottom {
+      height: 50px;
+      display: flex;
+      justify-content: left;
+      margin-bottom: 16px;
+    }
+      .book-author {
+        font-size: 15px;
+        color: #aaaaaa;
+
+      }
+      .book-price {
+        font-size: 15px;
+      }
+
+      .book-right-bottom a {
+        align-self: flex-end;
+        margin-left: 24px;
+        width: 120px;
+      }
+      .book-right-bottom .left {
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+.book:last-child {
+  margin-bottom: 96px;
+}

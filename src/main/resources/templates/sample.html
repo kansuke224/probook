@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+
+<!-- <head>用のフラグメントを読み込む -->
+<head th:replace="common/head :: head_fragment()">
+
+  <!-- ページ固有のファイルを読み込む -->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+  <script th:src="@{/js/index.js}"></script>
+
+</head>
+
+<body>
+
+  <!-- header用のフラグメントを読み込む -->
+  <div th:replace="common/header :: header_fragment"></div>
+
+</body>
+
+</html>

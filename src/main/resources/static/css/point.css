@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.juco-left {
+  justify-content: left;
+}
+.juco-end {
+  justify-content: flex-end;
+}
+
+
+
+.description-box {
+  position: relative;
+  padding-left: 80px;
+
+  margin-bottom: 48px;
+}
+.description-box::before {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 30px;
+  background-color: #3e8acc;
+
+  position: absolute;
+  top: -50%;
+  left: 50px;
+}
+
+
+.point-charge-box {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: #eeeeee;
+}
+  .charge-point {
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+  }
+  .credit-card-div {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.point-btn {
+  margin-top: 48px;
+}
+
+
+/* CREDIT CARD DIV STYLES */
+
+.help-block-box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+  .help-block-box input {
+    margin-top: 10px;
+  }
+.credit-card-div img {
+  padding-top:30px;
+}
+.credit-card-div .small-font {
+  font-size:9px;
+}
+.credit-card-div .pad-adjust {
+  padding-top:10px;
+}
+
+
+
+.btn--blue {
+  background-color: #3e8acc;
+  border: 1px solid #307dbf;
+}
+.btn--blue:link, .btn--blue:visited, .btn--blue:hover, .btn--blue:active {
+  color: #fff;
+}
+
+.btn--blue:hover {
+  background-color: #3270a6;
+}

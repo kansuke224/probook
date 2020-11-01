@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.juco-left {
+  justify-content: left;
+}
+.juco-end {
+  justify-content: flex-end;
+}
+.juco-start {
+  justify-content: flex-start;
+}
+
+
+.wrap-900 {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.picker-box {
+  margin-top: 48px;
+  /*margin-bottom: 24px;*/
+  margin-bottom: 96px;
+}
+
+.image-color-input {
+  margin-left: 20px;
+  width: 300px;
+  margin-right: auto;
+}
+
+
+.genre-label {
+  padding: 10px 0;
+  width: 200px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+
+  margin-right: 33px;
+}
+.genre-label:nth-child(4n) {
+  margin-right: 0;
+}
+
+.html {
+  background-color: rgba(235, 154, 2, 1);
+}
+.css {
+  background-color: rgba(126, 210, 249, 1);
+}
+.javascript {
+  background-color: rgba(237, 226, 64, 1);
+}
+.wordpress {
+  background-color: rgba(19, 31, 174, 1);
+}

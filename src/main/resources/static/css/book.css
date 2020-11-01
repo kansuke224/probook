@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+.wrap{
+  width: 100%;
+  /*background-color: powderblue;*/
+}
+
+/*.content{
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 24px 48px;
+  background-color: white;
+}*/
+
+.content {
+  padding-top: 108px;
+}
+
+
+
+
+
+/*========================================*/
+/* section共通 */
+
+section{
+  margin-top: 48px;
+}
+  section:first-child{
+    margin-top: 0;
+  }
+
+section h2.mb24{
+  margin: 0 auto;
+  margin-bottom: 24px;
+  width: 800px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  background-color: gainsboro;
+  padding-left: 10px;
+}
+section h2.mb48{
+  margin: 0 auto;
+  margin-bottom: 48px;
+  width: 800px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  background-color: gainsboro;
+  padding-left: 10px;
+}
+/*========================================*/
+
+.flexbox{
+  display: flex;
+}
+
+div.flex-item{}
+div.flex-item figure{
+  position: relative;
+}
+div.flex-item figure img{
+  height: 500px;
+  width: 350px;
+  margin-bottom: 48px;
+}
+  div.flex-item figure span{
+  padding: 5px;
+  line-height: 30px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: #ffc017;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 6px;
+  }
+
+p.book.type{
+  padding: 3px;
+  margin-left: 48px;
+  width: 80px;
+  height: 18px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 5px;
+  color: white;
+  background-color: #db524b;
+}
+p.book.title{
+  margin: 24px 0 48px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+p.book.evaluation{
+  margin-left: 48px;
+  margin-bottom: 10px;
+}
+  p.book.evaluation span.good i{
+    color: #ffe117;
+  }
+  p.book.evaluation span.bad i{
+    color: gainsboro;
+  }
+
+
+a.book.link{
+  margin-left: 48px;
+  color: #0022e7;
+}
+
+div.intro{
+  padding: 15px;
+  padding-bottom: 30px;
+  margin: 24px 0 48px 48px;
+  width: 350px;
+  height: 120px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+  div.overflow-dummy p{
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 16px;
+
+  }
+
+
+div.book-cart{
+  text-align: left;
+  margin-left: 48px;
+}
+  div.book-cart label{
+    color: #bf0000;
+    font-size: 21px;
+    letter-spacing: 5px;
+    line-height: 21px;
+  }
+  div.book-cart a{
+    margin-left: 20px;
+    background-color: #f2ae43;
+    color: white;
+  }
+
+
+/*----------------------------------------*/
+
+section.information p{
+  margin: 0 auto;
+  margin-bottom: 24px;
+  padding-left: 48px;
+  width: 800px;
+}
+  section.information p:last-child{
+  margin: 0 auto;
+  padding-left: 48px;
+  }
+
+section.information p span.info-left1{
+  padding-right: 17px;
+}
+section.information p span.info-left2{
+  padding-right: 50px;
+}
+section.information p span.info-right{
+  padding-left: 15px;
+}
+
+
+
+/*----------------------------------------*/
+
+section.detail p{
+  padding: 0 48px;
+  margin: 0 auto;
+  margin-bottom: 14px; 
+  width: 800px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+
+
+/*----------------------------------------*/
+
+section.review table{
+  width: 660px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  text-align: center;
+  border: 1px solid gray;
+}
+section.review table tr th{
+  width: 240px;
+  padding: 10px 0;
+  color: white;
+  font-weight: 400;
+  border: 1px solid white;
+  background: #3e8acc;
+}
+section.review table tr td{
+  padding: 10px 0;
+  border: 1px solid gray;
+
+}
+  section.review table tr td.comment{
+    padding: 24px 48px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  section.review table tr td span.good i{
+    font-size: 20px;
+    color: #ffe117;
+  }
+  section.review table tr td span.bad i{
+    font-size: 20px;
+    color: gainsboro;
+  }
+
+section.review .btn.review-more{
+  display: block;
+  margin: 0 auto;
+  color: black;
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  transition: all 0.2s ease 0s;
+  border-radius: 20px;
+}
+  section.review .btn.review-more:hover{
+    color: black;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.1875em);
+  }
+
+
+
+/*----------------------------------------*/

@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+p{
+  text-align: center;
+}
+
+figure#images{
+  width: 160px;
+  height: 190px;
+
+  margin: 0 auto 24px auto;
+  /*margin-bottom: 24px;*/
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+}
+figure#images img{
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 190px;
+}
+
+p#title{
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+
+p#star{
+  text-align: center;
+  margin-bottom: 96px;
+}
+  p#star i {
+    font-size: 40px;
+    color: #cccccc;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  p#star i:first-child {
+    color: #ffe117;
+  }
+  p#star i:last-child {
+    margin-right: 0;
+  }
+
+#form-wrap {
+  width: 840px;
+  margin: 0 auto;
+}
+
+
+.put{
+  /*margin: 0 auto;*/
+  margin-bottom: 24px;
+
+  width: 840px;
+}
+
+.select{
+  /*margin: 0 auto;*/
+  margin-bottom: 48px;
+}
+
+div#Review{
+  text-align: right;
+}
+
+.button{
+  text-align: center;
+  color: #fff;
+  background: #00FFFF;
+  width: 150px;
+  height: 50px;
+}
+
+
+
+label {
+  margin-bottom: 8px;
+}
+
+.form--box {
+  margin-bottom: 24px;
+}
+
+#select {
+  margin-bottom: 48px;
+}
+
+.select-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 840px;
+}
+.select-flex > div {
+  width: 48%;
+}
+
+
+/*
+bootstrapのボタンを色だけ変更する
+深い青色
+*/
+.btn--blue {
+  background-color: #3e8acc;
+  border: 1px solid #307dbf;
+  color: #fff;
+}
+.btn--blue:link, .btn--blue:visited, .btn--blue:hover, .btn--blue:active {
+  color: #fff;
+}
+
+.btn--blue:hover {
+  background-color: #3270a6;
+}
+
+
+
+.br-theme-fontawesome-stars .br-widget a {
+  font-size: 56px;
+  margin-right: 10px;
+}
+
+.br-theme-fontawesome-stars {
+  text-align: center;
+  margin-bottom: 104px;
+}

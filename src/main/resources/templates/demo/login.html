@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+  <!-- @{}とすることでcsrf対策のトークンが付与されるらしい -->
+  <form th:action="@{/sign_in}" method="post">
+    <input type="text" name="username">user_name
+    <br>
+    <input type="password" name="password">password
+    <br>
+    <input type="submit" value="Login">
+  </form>
+
+</body>
+</html>

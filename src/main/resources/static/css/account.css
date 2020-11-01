@@ -1,0 +1,452 @@
+@charset "utf-8";
+
+    content > info-box {
+        border: 1px solid #000;
+        border-radius: ;
+        width: 800px;
+        height: 55px;
+    }
+
+/************ account *************/
+
+@charset "utf-8";
+
+
+ul {
+    list-style: none;
+}
+
+/* ALL */
+.cp_wrap {
+    margin-top: 56px;
+    height: 100vh;
+}
+
+    .cp_actab {
+        position: relative;
+        overflow: hidden;
+        width: 800px;
+        margin: 0 auto;
+        color: #000;
+    }
+    .many-actab {
+        position: relative;
+        overflow: hidden;
+        width: 800px;
+        margin: 0 auto;
+        color: #000;
+    }
+    /* ライブラリー階層用 */
+    .many-actab2 {
+        position: relative;
+        overflow: hidden;
+        width: 700px;
+        margin-left: 100px;
+        color: #000;
+    }
+    /* 管理者専用 */
+    .many-actab3 {
+        position: relative;
+        overflow: hidden;
+        width: 800px;
+        margin-left: 100px;
+        color: #000;
+    }
+    .cp_actab input.tab-input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .many-actab input.tab-input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    /* ライブラリー階層用 */
+    .many-actab2 input.tab-input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    /* 管理者専用 */
+    .many-actab3 input.tab-input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+.cp_actab label.blue-label {
+	font-weight: bold;
+	line-height: 3;
+	position: relative;
+	display: block;
+	padding: 0 0 0 4em;
+	cursor: pointer;
+    background: linear-gradient(to right,#3e8acc 0% 3%,#fff 3% 100%);
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+/* ライブラリー用 */
+.many-actab label.blue-sublabel {
+	font-weight: bold;
+	line-height: 3;
+	position: relative;
+	display: block;
+	padding: 0 0 0 4em;
+	cursor: pointer;
+    background: linear-gradient(to right,#3e8acc 0% 3%,#fff 3% 100%);
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+.many-actab2 label.blue-sublabel1 {
+	font-weight: bold;
+	line-height: 3;
+	position: relative;
+	display: block;
+	padding: 0 0 0 4em;
+	cursor: pointer;
+    background: linear-gradient(to right,#3e8acc 0% 3%,#fff 3% 100%);
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+    .many-actab2 label.blue-sublabel1 span {
+        float: right;
+        padding-right: 10%;
+    }
+    .many-actab2 label.blue-sublabel1 span a{}
+    .many-actab2 label.blue-sublabel1 span a:hover{
+        text-decoration: none;
+        transition: 0,8s;
+        opacity: 0.5;
+    }
+
+/* ライブラリー階層1,2用 */
+.many-actab2 ul {
+    margin-left: 100px;
+}
+
+/* 管理者専用 */
+.many-actab3 label.blue-sublabel1 {
+	font-weight: bold;
+	line-height: 3;
+	position: relative;
+	display: block;
+	padding: 0 0 0 4em;
+	cursor: pointer;
+    background: linear-gradient(to right,#3e8acc 0% 3%,#fff 3% 100%);
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+    .many-actab3 label.blue-sublabel1 span {
+        float: right;
+        padding-right: 10%;
+    }
+    .many-actab3 label.blue-sublabel1 span a{}
+    .many-actab3 label.blue-sublabel1 span a:hover{
+        text-decoration: none;
+        transition: 0,8s;
+        opacity: 0.5;
+    }
+
+/* 管理者専用 */
+.many-actab3 ul {
+    margin-left: 100px;
+}
+
+/* アカウント */
+.cp_actab-content0 {
+    height: 578px;
+}
+.cp_actab-content0 .sub-title0{
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    margin-left: auto;
+    background: #f7f7f7;
+    border: 1px solid #fff;
+    width: 600px;
+    height: 780px;
+}
+.cp_actab-content0 .sub-title0 > h4{
+    margin: auto;
+    width: 125px;
+    height: 40px;
+    border-radius: 0 0 12.5px 12.5px;
+    background: #fff;
+    padding-top: 1%;
+}
+.image-plc {
+    float: left;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.plc-date {
+    width: 80px;
+    margin: 10%;
+}
+.image-plc img ul{
+    width: 200px;
+}
+
+.image-plc img {
+    width: 205px;
+    height: 270px;
+}
+.history-plc img {
+    width: 97px;
+    height: 123px;
+    float: left;
+    margin-bottom: 10%;
+    padding-right: 5px;
+}
+.history-plc span {
+    float: left;
+}
+
+
+.cp_actab .cp_actab-content0 {
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: max-height 0.35s;
+	transition: max-height 0.35s;
+	color: #333333;
+	background: #fff;
+}
+.cp_actab .cp_actab-content0 p {
+	margin: 1em;
+}
+/* :checked */
+.cp_actab input:checked ~ .cp_actab-content0 {
+	max-height: 45em;
+}
+/********** ユーザーform ***********/
+#user_form{
+    float: left;
+    padding-bottom: 48px;
+    text-align: left;
+}
+label.form-label {
+    padding-top: 48px;
+    color: #999999;
+}
+
+
+/******** point-area *********/
+
+.point-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* アカウント以外 */
+.cp_actab-content {
+    float: left;
+    width: 50%;
+}
+
+.cp_actab-content .sub-title{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    margin-left: 10%;
+    background: #f7f7f7;
+    border: 1px solid #fff;
+    width: 300px;
+    height: 150px;
+}
+.cp_actab-content .sub-title > h4{
+    margin: auto;
+    width: 125px;
+    height: 40px;
+    border-radius: 0 0 12.5px 12.5px;
+    background: #fff;
+}
+
+.sub-title p {
+    font-size: 21px;
+}
+/* .cp_actab-content {
+    height: 148px;
+} */
+
+.cp_actab .cp_actab-content {
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: max-height 0.35s;
+	transition: max-height 0.35s;
+	color: #333333;
+	background: #fff;
+}
+.cp_actab .cp_actab-content p {
+	margin: 1em;
+}
+/* :checked */
+.cp_actab input:checked ~ .cp_actab-content {
+	max-height: 20em;
+}
+/* Icon */
+.cp_actab label::after {
+	line-height: 3;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 3em;
+	height: 3em;
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
+	text-align: center;
+}
+.cp_actab input[type=checkbox]:checked + label::after {
+	transform: rotate(315deg);
+}
+
+/****** charge ******/
+
+.charge-area ul{
+    font-size: 11px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.charge-area ul li {
+    padding: 5px 0 5px 0;
+}
+
+#charge-btn1 {
+    margin: auto;
+    width: 109px;
+    height: 38px;
+    border: solid 1px #ff5a00;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    background: #fff;
+}
+    #charge-btn1 span {
+        font-size: 16px;
+        color: #ff5a00;
+    }
+    #charge-btn1 a{
+        color: #f7f7f7;
+    }
+    #charge-btn1 a:hover{
+        text-decoration: none;
+        transition: 0,8s;
+        opacity: 0.5;
+    }
+
+#charge-btn2 {
+    margin: auto;
+    width: 109px;
+    height: 38px;
+    border: solid 1px #7f7e7d;
+    border-radius: 30px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    background: #fff;
+}
+    #charge-btn2 span {
+        font-size: 16px;
+        color: #7f7e7d;
+    }
+    #charge-btn2 a{
+        color: #f7f7f7;
+    }
+    #charge-btn2 a:hover{
+        text-decoration: none;
+        transition: 0,8s;
+        opacity: 0.5;
+    }
+
+/* 多階層アコーディオン */
+.accordion ul {
+    list-style: none;
+    margin:0;
+}
+label{
+    cursor: pointer;
+}
+.toggle{
+    display: none;
+}
+.toggle + ul{
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+.toggle:checked + ul{
+    max-height: 900px;
+    transition: all .5s ease-in;
+}
+/* 履歴 */
+#hist-btn {
+    margin: 50% 20% 5% 80%;
+    width: 109px;
+    height: 38px;
+    border: solid 1px #7f7e7d;
+    border-radius: 30px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding-top: 10px;
+}
+#hist-btn a{
+    color: #f7f7f7;
+}
+#hist-btn a:hover{
+    text-decoration: none;
+    transition: 0,8s;
+    opacity: 0.5;
+}
+
+    #hist-btn span {
+        font-size: 16px;
+        color: #7f7e7d;
+    }
+
+
+.account-figure {
+    float: left;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    width: 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .account-figure img {
+        width: auto;
+        height: auto;
+        max-width: 200px;
+        max-height: 250px;
+    }
+
+
+
+.history-plc figure {
+    float: left;
+
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .history-plc figure img {
+        width: auto;
+        height: auto;
+        max-width: 150px;
+        max-height: 200px;
+    }
