@@ -32,22 +32,22 @@ public class HelloController {
   // メソッドだけでなく、クラスにも付与ができる
 
   // @RequestParams()などを使い、クエリパラメータや、postなどの値を取得することができるらしい
-  @RequestMapping("/user/{userId}")
-  private ModelAndView showUserInfo(@PathVariable("userId") String userId ,ModelAndView mav) {
-    UserDto user = userService.findUserById(userId);
-
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    //Principalからログインユーザの情報を取得
-    String userName = auth.getName();
-
-    System.out.println(auth);
-
-    user.userName = userName + "認証済み";
-
-    mav.addObject("user", user);
-    mav.setViewName("demo/showUserInfo");
-    return mav;
-  }
+//  @RequestMapping("/user/{userId}")
+//  private ModelAndView showUserInfo(@PathVariable("userId") String userId ,ModelAndView mav) {
+//    UserDto user = userService.findUserById(userId);
+//
+//    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//    //Principalからログインユーザの情報を取得
+//    String userName = auth.getName();
+//
+//    System.out.println(auth);
+//
+//    user.userName = userName + "認証済み";
+//
+//    mav.addObject("user", user);
+//    mav.setViewName("demo/showUserInfo");
+//    return mav;
+//  }
 
   @RequestMapping("/hello")
   private ModelAndView hello(ModelAndView mav) {

@@ -2,12 +2,9 @@
 <html xmlns:th="http://www.thymelef.org">
 
 <!-- <head>用のフラグメントを読み込む -->
-<head th:replace="common/head :: head_fragment()">
-
-  <!-- ページ固有のファイルを読み込む -->
-  <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
-  <script th:src="@{/js/index.js}"></script>
-
+<head th:replace="common/head :: head_fragment(links = ~{::link}, scripts = ~{::script})">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+  <script type="text/javascript"></script>
 </head>
 
 <body>

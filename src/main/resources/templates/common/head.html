@@ -1,4 +1,4 @@
-<head xmlns:th="http://www.thymeleaf.org" th:fragment="head_fragment()">
+<head xmlns:th="http://www.thymeleaf.org" th:fragment="head_fragment(links, scripts)">
 
   <meta charset="UTF-8">
   <title>probook</title>
@@ -16,6 +16,8 @@
   <link rel="stylesheet" type="text/css" th:href="@{/css/reset.css}">
   <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
   <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+  <!-- 各画面専用のcssを定義 -->
+  <th:block th:replace="${links}" />
 
   <!-- slick -->
   <link th:href="@{/slick/slick-theme.css}" rel="stylesheet" type="text/css">
@@ -24,5 +26,7 @@
 
   <!-- js設定ファイル -->
   <script th:src="@{/js/header.js}"></script>
+  <!-- 各画面専用のjavascriptを定義します -->
+  <th:block th:replace="${scripts}" />
 
 </head>

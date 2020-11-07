@@ -6,8 +6,13 @@
 package com.example.probook.dao;
 
 import org.seasar.doma.Dao;
+import org.seasar.doma.In;
+import org.seasar.doma.Insert;
+import org.seasar.doma.Out;
+import org.seasar.doma.Procedure;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
+import org.seasar.doma.jdbc.Reference;
 
 import com.example.probook.dto.UserDto;
 
@@ -24,12 +29,18 @@ import com.example.probook.dto.UserDto;
 public interface UserDao {
 
   @Select
-  UserDto findUserById(String userId);
+  UserDto findUserById(int userId);
 
   @Select
   UserDto findUserByUsername(String username);
 
   @Select
   UserDto findUserByMail(String mail);
+
+  //@Insert
+  //int insertUser(UserDto dto);
+
+  @Procedure(name="insert_user")
+  void insertUser(@In String username, @In String userpass, @In String userMail, @Out Reference<Integer> updateNumber);
 
 }
