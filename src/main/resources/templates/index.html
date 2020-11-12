@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+
+<!-- <head>用のフラグメントを読み込む -->
+<head th:replace="common/head :: head_fragment(links = ~{::link}, scripts = ~{::script})">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+  <script type="text/javascript" th:src="@{/js/index.js}"></script>
+</head>
+
+<body>
+
+  <!-- header用のフラグメントを読み込む -->
+  <div th:replace="common/header :: header_fragment"></div>
+
+
+  <div class="content">
+    <div id="slide">
+      <ul class="slider">
+        <li><a href="#"><img th:src="@{/images/slide1.jpg}" alt="image01"></a></li>
+        <li><a href="#"><img th:src="@{/images/slide2.jpg}" alt="image02"></a></li>
+        <li><a href="#"><img th:src="@{/images/slide3.jpg}" alt="image03"></a></li>
+      </ul>
+    </div>
+
+
+    <div class="h2-box flex">
+      <h2>ランキング</h2>
+      <div class="h2-box-right">
+        <a href="search.html">ランキングページへ</a> >
+      </div>
+    </div>
+
+    <div class="shohin rank">
+      <div class="flex alit-center">
+
+        <div class="arrow">
+          <div class="arrow5">
+            <a href="#"></a>
+          </div>
+        </div>
+
+        <div class="item01 item">
+          <p class="crown"><i class="fas fa-crown">1</i></p><br>
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+          <p class="red price">2430円</p>
+          <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <p class="crown"><i class="fas fa-crown">2</i></p><br>
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <p class="crown"><i class="fas fa-crown">3</i></p><br>
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item04 item">
+          <p class="crown"><i class="fas fa-crown">4</i></p><br>
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="arrow">
+          <div class="arrow4">
+            <a href="#"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="h2-box flex">
+      <h2>ジャンル - Ruby</h2>
+      <div class="h2-box-right">
+        <a href="search.html">ジャンル - Rubyページへ</a> >
+      </div>
+    </div>
+
+    <div class="shohin">
+      <div class="flex alit-center">
+
+        <div class="arrow">
+          <div class="arrow5">
+            <a href="#"></a>
+          </div>
+        </div>
+
+        <div class="item01 item">
+          <!-- <p class="crown"><i class="fas fa-crown">1</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+          <p class="red price">2430円</p>
+          <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <!-- <p class="crown"><i class="fas fa-crown">2</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <!-- <p class="crown"><i class="fas fa-crown">3</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item04 item">
+          <!-- <p class="crown"><i class="fas fa-crown">4</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="arrow">
+          <div class="arrow4">
+            <a href="#"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="h2-box flex">
+      <h2>最近チェックした書籍</h2>
+      <div class="h2-box-right">
+        <!-- <a href="search.html">ジャンル - Rubyページへ</a> > -->
+      </div>
+    </div>
+
+    <div class="shohin">
+      <div class="flex alit-center">
+
+        <div class="arrow">
+          <div class="arrow5">
+            <a href="#"></a>
+          </div>
+        </div>
+
+        <div class="item01 item">
+          <!-- <p class="crown"><i class="fas fa-crown">1</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+          <p class="red price">2430円</p>
+          <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <!-- <p class="crown"><i class="fas fa-crown">2</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <!-- <p class="crown"><i class="fas fa-crown">3</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item04 item">
+          <!-- <p class="crown"><i class="fas fa-crown">4</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="arrow">
+          <div class="arrow4">
+            <a href="#"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="h2-box flex">
+      <h2>今すぐ読める！無料の書籍</h2>
+      <div class="h2-box-right">
+        <a href="search.html">無料書籍ページへ</a> >
+      </div>
+    </div>
+
+    <div class="shohin">
+      <div class="flex alit-center">
+
+        <div class="arrow">
+          <div class="arrow5">
+            <a href="#"></a>
+          </div>
+        </div>
+
+        <div class="item01 item">
+          <!-- <p class="crown"><i class="fas fa-crown">1</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+          <p class="red price">2430円</p>
+          <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <!-- <p class="crown"><i class="fas fa-crown">2</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item">
+          <!-- <p class="crown"><i class="fas fa-crown">3</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="item04 item">
+          <!-- <p class="crown"><i class="fas fa-crown">4</i></p><br> -->
+          <figure>
+            <img th:src="@{/images/python.jpg}" class="python">
+          </figure>
+          <a href="book.html" id="atag">pythonによるAI・機械<br>
+            学習・深層学習アプリ</a><br>
+            <p class="red price">2430円</p>
+            <p class="grey">クジラ飛行机</p>
+        </div>
+
+        <div class="arrow">
+          <div class="arrow4">
+            <a href="#"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+</body>
+
+</html>

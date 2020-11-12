@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+
+<!-- <head>用のフラグメントを読み込む -->
+<head th:replace="common/head :: head_fragment(links = ~{::link}, scripts = ~{::script})">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/book.css}"/>
+  <script type="text/javascript"></script>
+</head>
+
+<body>
+
+  <!-- header用のフラグメントを読み込む -->
+  <div th:replace="common/header :: header_fragment"></div>
+
+
+  <div class="content">
+
+
+
+    <div class="main flexbox">
+
+      <div class="flex-item">
+        <figure>
+          <img src="images/book01.jpg">
+          <span><i class="fas fa-star"></i></span>
+        </figure>
+      </div>
+
+
+      <div>
+
+        <p class="book type">電子書籍</p>
+
+        <p class="book title">プログラミング入門講座基本と思考法と重要事項がきちんと学べる授業</p>
+
+        <p class="book evaluation">
+          <span class="good">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span><!--
+       --><span class="bad"><i class="far fa-star"></i></span>
+        </p>
+
+        <a href="#review" class="book link">レビュー1件</a>
+        <a href="review.html" class="book link">レビューを書く</a>
+
+        <div class="intro">
+          <div class="overflow-dummy">
+            <p>なぜ、世界中の成功者はプログラミングの基本を学んでいるのか。その答えと、具体的な学び方が一冊に！世界中で2億人以上が夢中になった学び方！</p>
+            <p>バラク・オバマ（アメリカ大統領）、ビル・ゲイツ（Microsoft 創業者）、マーク・ザッカーバーグ（Facebook 創業者）らも賛同した、「世界最良の学習メソッド」を徹底紹介！
+              抜群の面白さとわかりやすさで、小学生から大人まで全世代がハマる！</p>
+          </div>
+        </div>
+
+        <div class="book-cart">
+          <label>&yen;2,000</label>
+          <a class="btn cart-in" href="cart.html" role="button"><i class="fas fa-shopping-cart"></i> カートに入れる</a>
+        </div>
+
+      </div>
+
+    </div><!-- flexbox -->
+
+
+
+    <section class="information">
+
+      <h2 class="mb24">基本情報</h2>
+
+      <p>
+        <span class="info-left1">ページ数</span>:<span class="info-right">10ページ</span>
+      </p>
+      <p>
+        <span class="info-left2">作者</span>:<span class="info-right">米田晶悟</span>
+      </p>
+      <p>
+        <span class="info-left2">内容</span>:<span class="info-right">プログラミング入門編</span>
+      </p>
+
+    </section><!-- detail -->
+
+
+
+    <section class="detail">
+
+      <h2 class="mb24">商品説明</h2>
+
+      <p>
+        昨今巷では「プログラミング教育」や「プログラミングスキルの必要性」が話題になっています。はたして「プログラミング教育」はどこまで本格化するのか？「プログラミング」はビジネスの必須スキルになっていくのか？
+      </p>
+      <p>
+        本書は日本、あるいは世界におけるプログラミング教育やプログラミングスキルの必要性について最新動向を紹介しつつ、実際にプログラミングの学び方も習得していきます。
+      </p>
+      <p>
+        これまでエンジニアだけの習得スキルであったプログラミングから、一般的なビジネススキルへ。そんな時代の道しるべとして、さまざまな人に読んでいただきたい1冊です。
+      </p>
+
+    </section>
+
+
+
+    <section class="review" id="review">
+
+      <h2 class="mb48">レビュー一覧</h2>
+
+      <table border="3">
+
+        <tr>
+          <th>5段階評価</th>
+          <td>
+            <span class="good"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span><!--
+         --><span class="bad"><i class="far fa-star"></i><i class="far fa-star"></i></span>
+          </td>
+        </tr>
+
+        <tr>
+          <th>学習年数</th>
+          <td>5年以内</td>
+        </tr>
+
+        <tr>
+          <th>本書の内容レベル</th>
+          <td>初心者～中級者向け</td>
+        </tr>
+
+        <tr>
+          <th colspan="2">コメント本文</th>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="comment">この手の本が沢山あり、どれを買うか大変迷いますが、こちらは初心者に分かりやすく興味を持たせてくれる内容で、個人的に購入して本当に良かったです。実践と併せて今後も繰り返し読み参考に致します。</td>
+        </tr>
+
+      </table>
+
+
+      <table border="3">
+
+        <tr>
+          <th>5段階評価</th>
+          <td>
+            <span class="good"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span><!--
+         --><span class="bad"><i class="far fa-star"></i></span>
+          </td>
+        </tr>
+
+        <tr>
+          <th>学習年数</th>
+          <td>1年以内</td>
+        </tr>
+
+        <tr>
+          <th>本書の内容レベル</th>
+          <td>初心者～中級者向け</td>
+        </tr>
+
+        <tr>
+          <th colspan="2">コメント本文</th>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="comment">本の通りにパソコンと向き合って進めています。プログラミングの基礎がきちんと学べます。</td>
+        </tr>
+
+      </table>
+
+
+      <!-- <button class="btn review-more">他のレビューを表示</button> -->
+
+    </section>
+
+
+
+  </div>
+
+</body>
+
+</html>

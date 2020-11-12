@@ -91,9 +91,18 @@
             <p>アカウント</p>
           </a>
           <div class="account-item">
-              <a href="" class="user_name"><i class="fas fa-user-alt"></i>ユーザー名</a>
-              <a href="login.html" class="logout">ログアウト</a>
-              <a href="account.html" class="mypage">アカウントページ</a>
+            <a href="" class="user_name">
+              <div th:if="${user}">
+                <i class="fas fa-user-alt"></i><span th:text="${user.userName}"></span>
+              </div>
+              <div th:unless="${user}">
+                <i class="fas fa-user-alt"></i><span>ゲスト</span>
+              </div>
+            </a>
+            <form role="form" id="logout" th:action="@{/logout}" method="post" class="logout">
+                <button type="submit">ログアウト</button>
+            </form>
+            <a th:href="@{/account/}" class="mypage">アカウントページ</a>
           </div>
       </li>
     </ul>

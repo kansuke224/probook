@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+
+<!-- <head>用のフラグメントを読み込む -->
+<head th:replace="common/head :: head_fragment(links = ~{::link}, scripts = ~{::script})">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/post_book.css}"/>
+  <script type="text/javascript"></script>
+</head>
+
+<body>
+
+  <!-- header用のフラグメントを読み込む -->
+  <div th:replace="common/header :: header_fragment"></div>
+
+
+  <div class="content">
+
+    <div class="h2-box">
+      <h2>新規書籍投稿</h2>
+    </div>
+
+
+    <p class="heading3">タイトル、作者名、値段、表紙画像、書籍ファイル(EPUB形式)を入力してください</p>
+
+
+    <form method="post" th:action="@{/book/post}" enctype="multipart/form-data">
+
+      <label>タイトル</label>
+      <div class="input-group mb-3">
+        <input required type="text" name="title" class="form-control input-wid100" aria-label="title" aria-describedby="basic-addon1">
+      </div>
+
+      <label>作者名</label>
+      <div class="input-group mb-3">
+        <input required type="text" name="authorName" class="form-control input-wid100" aria-label="author" aria-describedby="basic-addon1">
+      </div>
+
+      <label for="textarea1">本の説明</label>
+      <div class="input-group mb-3">
+        <textarea id="textarea1" name="description" class="form-control input-wid100"></textarea>
+      </div>
+
+      <label>値段</label>
+      <div class="input-group mb-3 wid-100px">
+        <input required type="number" name="price" class="form-control input-px price aaa" aria-label="price" aria-describedby="basic-addon1">
+        <span>円</span>
+      </div>
+
+
+
+      <div class="flex">
+
+
+        <div class="card-40">
+
+          <label>表紙画像</label>
+          <div class="custom-file file-img">
+            <input required type="file" name="bookImage" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+            <label class="custom-file-label" for="inputGroupFile04">表紙画像を選択してください</label>
+          </div>
+
+        </div><!-- card-40 -->
+
+
+        <div class="card-40">
+
+          <label>書籍ファイル</label>
+          <div class="custom-file file-epub">
+            <input required type="file" name="bookContent" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+            <label class="custom-file-label" for="inputGroupFile04">書籍ファイル(EPUB形式)を選択してください</label>
+          </div>
+
+        </div><!-- card-40 -->
+
+
+      </div><!-- flex -->
+
+
+
+        <div class="image-preview">
+
+          <figure>
+           <img src="images/bg1.png" alt="表紙画像">
+          </figure>
+
+        </div>
+
+
+
+        <div class="button-area">
+
+          <input type="submit" class="btn btn-primary link-button" role="button" value="書籍を投稿">
+
+        </div>
+
+      </form>
+
+
+
+  </div>
+
+</body>
+
+</html>

@@ -27,8 +27,8 @@ div.content label{
   color: #999999;
 }
 
-div.content input.input-wid100{
-  margin-bottom: 48px;
+div.content input.input-wid100, div.content textarea.input-wid100{
+  margin-bottom: 24px;
   width: 100%;
 }
 div.content div.input-group{

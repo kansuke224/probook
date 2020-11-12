@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/sign_in") //フォームのSubmitURL、このURLへリクエストが送られると認証処理が実行される
                 .usernameParameter("mail") //リクエストパラメータのname属性を明示 今回はmailとパスワードで認証
                 .passwordParameter("password")
-                .successForwardUrl("/user/1")
+                .successForwardUrl("/index/")
                 .failureUrl("/login?error")
                 .permitAll()
                 .and()

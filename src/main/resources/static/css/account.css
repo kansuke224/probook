@@ -84,6 +84,8 @@ ul {
     background: linear-gradient(to right,#3e8acc 0% 3%,#fff 3% 100%);
     border: 1px solid #000;
     border-radius: 15px;
+
+  width: 800px;
 }
 /* ライブラリー用 */
 .many-actab label.blue-sublabel {
@@ -239,6 +241,7 @@ label.form-label {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /* アカウント以外 */
