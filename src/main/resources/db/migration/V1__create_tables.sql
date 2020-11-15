@@ -22,7 +22,7 @@ create table point (
 -- レビュー
 --* restorefromtemptable
 create table review (
-  review int not null
+  review_id int not null
   , review_comment varchar2(2000) not null
   , review_star_no int not null
   , review_date date not null
@@ -88,7 +88,7 @@ comment on column point.point_date is 'チャージ日時';
 comment on column point.user_id is 'ユーザid';
 
 comment on table review is 'レビュー';
-comment on column review.review is 'レビューid';
+comment on column review.review_id is 'レビューid';
 comment on column review.review_comment is 'コメント';
 comment on column review.review_star_no is '星の数';
 comment on column review.review_date is 'レビュー日時';

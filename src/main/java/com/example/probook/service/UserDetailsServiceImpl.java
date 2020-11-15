@@ -8,6 +8,8 @@ package com.example.probook.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +28,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     //DBからユーザ情報を検索するメソッドを実装したクラス
     @Autowired
     private UserService userService;
+
+    @Autowired
+    HttpSession session;
 
     @Override
     public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
@@ -47,6 +52,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
         //UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトをキャスト
         UserDetails userDetails = (UserDetails)new User(user.getUserName(), encoder.encode(user.getUserPass()),grantList);
+
+        // UserDtoをHttpSessionに格納、CommonControllerにて毎回sessionから取得させる
+        session.setAttribute("user", user);
 
         return userDetails;
     }

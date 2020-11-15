@@ -14,7 +14,7 @@ import com.example.probook.dto.UserDto;
 import com.example.probook.form.PostBookForm;
 
 @Controller
-@RequestMapping("/book/")
+@RequestMapping("/book")
 public class BookController {
 
   @RequestMapping(value="/", method=RequestMethod.GET)

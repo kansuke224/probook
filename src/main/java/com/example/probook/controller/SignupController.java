@@ -3,7 +3,6 @@ package com.example.probook.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,6 +28,9 @@ public class SignupController {
 
   @Autowired
   UserService userservice;
+
+  @Autowired
+  HttpSession session;
 
   @Autowired
   private AuthenticationManager authManager;
@@ -62,10 +64,10 @@ public class SignupController {
     if(dto.getUserId() != null) {
       // signupが問題なく終了した場合
       login(request, dto.getUserMail(), dto.getUserPass());
-      Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-      //Principalからログインユーザの情報を取得
-      String userName = auth.getName();
-      System.out.println(userName);
+
+      // UserDtoをHttpSessionに格納、CommonControllerにて毎回sessionから取得させる
+      session.setAttribute("user", dto);
+
       return "redirect:/index/";
     } else {
       redirectAttributes.addFlashAttribute("msg", "会員登録で問題が発生しました");

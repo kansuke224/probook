@@ -12,6 +12,7 @@ public class SignupForm {
   private String userName;
 
   @NotNull
+  @Pattern(regexp = "[a-zA-Z0-9@.,_-]*")
   private String userMail;
 
   @NotNull
