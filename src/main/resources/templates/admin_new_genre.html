@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelef.org">
+
+<!-- <head>用のフラグメントを読み込む -->
+<head th:replace="common/head :: head_fragment(links = ~{::link}, scripts = ~{::script})">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/admin_new_genre.css}"/>
+  <script type="text/javascript" th:src="@{/js/admin_new_genre.js}"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/> <!-- 'monolith' theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+</head>
+
+<body>
+
+  <!-- header用のフラグメントを読み込む -->
+  <div th:replace="common/header :: header_fragment"></div>
+
+
+
+
+  <div class="content">
+    <div class="h2-box">
+      <h2>新規ジャンル</h2>
+    </div>
+
+    <div class="wrap-900">
+
+      <form method="post" th:action="@{/genre/insert}" th:object="${genreForm}">
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">ジャンル</label>
+          <input th:value="*{genreName}" name="genreName" required type="text" class="form-control mt-2" id="exampleInputEmail1" placeholder="ジャンル名を入力してください">
+        </div>
+
+        <div class="picker-box">
+          <label class="mb-2">イメージカラー</label>
+          <div class="flex juco-left">
+            <div id="color-picker"></div>
+            <div>
+              <input th:value="*{genreColor}" name="genreColor" required type="text" class="form-control image-color-input" placeholder="rgba">
+              <p th:if="${#fields.hasErrors('genreColor')}" th:errors="*{genreColor}" class=""></p>
+            </div>
+            <input type="submit" class="btn btn--blue" value="ジャンルを追加">
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="h2-box">
+      <h2>ジャンル一覧</h2>
+    </div>
+
+    <div class="wrap-900 flex juco-start">
+      <div class="genre-label html">HTML</div>
+      <div class="genre-label css">CSS</div>
+      <div class="genre-label javascript">Javascript</div>
+      <div class="genre-label wordpress">Wordpress</div>
+      <div class="genre-label html">HTML</div>
+      <div class="genre-label html">HTML</div>
+      <div class="genre-label css">CSS</div>
+      <div class="genre-label javascript">Javascript</div>
+      <div class="genre-label wordpress">Wordpress</div>
+      <div class="genre-label html">HTML</div>
+      <div class="genre-label wordpress">Wordpress</div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
