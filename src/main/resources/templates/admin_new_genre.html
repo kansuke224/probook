@@ -19,32 +19,46 @@
   <!-- header用のフラグメントを読み込む -->
   <div th:replace="common/header :: header_fragment"></div>
 
+  <!-- ajaxで取得したcontentFragmentをajaxResult.htmlに指定して部分更新を行う -->
+  <div id="ajaxResult">
 
+  <div class="content" th:fragment="contentFragment">
 
+    <div class="alert-box mt-4">
+      <div th:if="${errorMsg}" th:text="${errorMsg}" class="alert alert-danger"></div>
+      <div th:if="${successMsg}" th:text="${successMsg}" class="alert alert-success"></div>
+    </div>
 
-  <div class="content">
     <div class="h2-box">
       <h2>新規ジャンル</h2>
     </div>
 
     <div class="wrap-900">
 
-      <form method="post" th:action="@{/genre/insert}" th:object="${genreForm}">
+      <form id="genreForm" method="post" th:action="@{/genre/insertAjax}" th:object="${genreForm}">
 
         <div class="form-group">
           <label for="exampleInputEmail1">ジャンル</label>
+          <p th:if="${#fields.hasErrors('genreName')}" th:errors="*{genreName}" class="text-danger"></p>
           <input th:value="*{genreName}" name="genreName" required type="text" class="form-control mt-2" id="exampleInputEmail1" placeholder="ジャンル名を入力してください">
         </div>
 
         <div class="picker-box">
           <label class="mb-2">イメージカラー</label>
-          <div class="flex juco-left">
+          <div class="flex juco-left alit-start flex-nowrap">
             <div id="color-picker"></div>
-            <div>
-              <input th:value="*{genreColor}" name="genreColor" required type="text" class="form-control image-color-input" placeholder="rgba">
-              <p th:if="${#fields.hasErrors('genreColor')}" th:errors="*{genreColor}" class=""></p>
+            <div class="input-group ml-4">
+
+              <div th:if="${!#fields.hasErrors('genreColor')}">
+                <input th:value="*{genreColor}" name="genreColor" required type="text" class="form-control image-color-input" placeholder="rgba">
+              </div>
+              <div th:if="${#fields.hasErrors('genreColor')}">
+                <input th:value="*{genreColor}" name="genreColor" required type="text" class="form-control is-invalid image-color-input" placeholder="rgba">
+                <div th:errors="*{genreColor}" class="invalid-feedback"></div>
+              </div>
+
             </div>
-            <input type="submit" class="btn btn--blue" value="ジャンルを追加">
+            <button type="submit" class="btn btn--blue">ジャンルを追加</button>
           </div>
         </div>
 
@@ -71,6 +85,10 @@
     </div>
 
   </div>
+  <!-- .content -->
+
+  </div>
+  <!-- #ajaxResult -->
 
 </body>
 

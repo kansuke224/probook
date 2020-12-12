@@ -21,11 +21,14 @@ div.content p.heading3{
   font-size: 13px;
   border-left: 10px solid #3e8acc;
 }
+
+/*
 div.content label{
   margin-bottom: 6px;
   display: block;
   color: #999999;
 }
+*/
 
 div.content input.input-wid100, div.content textarea.input-wid100{
   margin-bottom: 24px;
@@ -47,19 +50,20 @@ div.content div.input-group{
       font-size: 18px;
     }
 
-div.content div.flex{
+
+div.content div.flex-post-book{
   margin-top: 96px;
   margin-bottom: 48px;
   display: flex;
   justify-content: space-between;
 }
-  div.content div.flex div.custom-file.file-img{
+  div.content div.flex-post-book div.custom-file.file-img{
     width: 40%;
   }
     .custom-file-label::after{
       content: "参照";
     }
-  div.content div.flex div.card-40 div.custom-file{
+  div.content div.flex-post-book div.card-40 div.custom-file{
     width: 450px;
   }
 
@@ -85,3 +89,36 @@ div.content div.button-area{
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
       transform: translateY(-0.1875em);
     }
+
+
+
+
+
+
+
+
+/* jqueryui combox設定 */
+.custom-combobox {
+  position: relative;
+  display: inline-block;
+}
+.custom-combobox-toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: -1px;
+  padding: 0;
+}
+.custom-combobox-input {
+  margin: 0;
+  padding: 5px 10px;
+  width: 300px;
+}
+
+#post-book-form {
+  margin-left: auto;
+}
+
+#post-book-search-btn {
+  /* margin-left: auto; */
+}

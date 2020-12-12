@@ -1,19 +1,31 @@
 package com.example.probook.form;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Data;
 
 @Data
 public class PostBookForm {
 
-  @NotNull
-  private String title;
+  @NotBlank
+  private String bookName;
 
-  // @NotNull
-  // private String authorName;
+  /*
+  @NotBlank
+  private String authorName;
+  */
 
-  @NotNull
-  private int price;
+  private Integer genreId;
+
+  private Integer bookPrice;
+
+  @NotBlank
+  private String bookDescription;
+
+  private MultipartFile bookImage;
+
+  private MultipartFile bookContent;
 
 }

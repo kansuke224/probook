@@ -4,7 +4,8 @@
 <!-- <head>用のフラグメントを読み込む -->
 <head th:replace="common/head :: head_fragment(links = ~{::link}, scripts = ~{::script})">
   <link rel="stylesheet" type="text/css" th:href="@{/css/post_book.css}"/>
-  <script type="text/javascript"></script>
+  <script type="text/javascript" th:src="@{/js/post_book.js}"></script>
+  <script type="text/javascript" th:src="@{/js/combobox.js}"></script>
 </head>
 
 <body>
@@ -12,50 +13,80 @@
   <!-- header用のフラグメントを読み込む -->
   <div th:replace="common/header :: header_fragment"></div>
 
+  <!-- ajaxで取得したcontentFragmentをajaxResult.htmlに指定して部分更新を行う -->
+  <div id="ajaxResult">
 
-  <div class="content">
+  <div class="content" th:fragment="contentFragment">
 
-    <div class="h2-box">
-      <h2>新規書籍投稿</h2>
+    <div class="alert-box mt-4">
+      <div th:if="${errorMsg}" th:text="${errorMsg}" class="alert alert-danger"></div>
+      <div th:if="${successMsg}" th:text="${successMsg}" class="alert alert-success"></div>
+    </div>
+
+    <div class="h2-box flex alit-center">
+      <h2>投稿書籍管理</h2>
+      <!-- 検索、新規追加ボタン -->
+      <form method="get" th:action="@{/postBook/new}" class="flex alit-center" id="combo-search-form">
+
+        <input type="text" id="combobox1">
+        <img th:src="@{/images/btn.png}" id="combo-img" style="display: none">
+
+        <button type="submit" th:formaction="@{/postBook/edit}" class="btn btn-success btn-sm ml-2" id="post-book-search-btn">検索</button>
+        <button type="submit" th:formaction="@{/postBook/new}" class="btn btn--blue btn-sm ml-2">新規</button>
+
+      </form>
+
     </div>
 
 
     <p class="heading3">タイトル、作者名、値段、表紙画像、書籍ファイル(EPUB形式)を入力してください</p>
 
 
-    <form method="post" th:action="@{/book/post}" enctype="multipart/form-data">
+    <form method="post" th:action="${kbn} == 'new' ? @{/postBook/new} : @{/postBook/edit}" th:object="${postBookForm}" enctype="multipart/form-data" id="post-book-form">
 
-      <label>タイトル</label>
+      <label class="mb-2">タイトル</label>
       <div class="input-group mb-3">
-        <input required type="text" name="title" class="form-control input-wid100" aria-label="title" aria-describedby="basic-addon1">
+        <input required type="text" th:value="*{bookName}" name="bookName" class="form-control input-wid100" aria-label="title" aria-describedby="basic-addon1">
       </div>
 
-      <label>作者名</label>
+      <!--
+      <label class="mb-2">作者名</label>
       <div class="input-group mb-3">
         <input required type="text" name="authorName" class="form-control input-wid100" aria-label="author" aria-describedby="basic-addon1">
       </div>
+       -->
 
-      <label for="textarea1">本の説明</label>
-      <div class="input-group mb-3">
-        <textarea id="textarea1" name="description" class="form-control input-wid100"></textarea>
+      <label class="mb-2">ジャンル</label>
+      <div class="input-group mb-5">
+        <select class="custom-select" name="genreId" th:value="*{genreId}">
+          <option selected>ジャンルを選択してください</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
       </div>
 
-      <label>値段</label>
+      <label class="mb-2" for="textarea1">本の説明</label>
+      <div class="input-group mb-3">
+        <textarea id="textarea1" name="bookDescription" th:value="*{bookDescription}" class="form-control input-wid100"></textarea>
+      </div>
+
+      <label class="mb-2">値段</label>
       <div class="input-group mb-3 wid-100px">
-        <input required type="number" name="price" class="form-control input-px price aaa" aria-label="price" aria-describedby="basic-addon1">
+        <input required type="number" name="bookPrice" th:value="*{bookPrice}" class="form-control input-px price aaa" aria-label="price" aria-describedby="basic-addon1">
         <span>円</span>
       </div>
 
 
 
-      <div class="flex">
+      <div class="flex-post-book">
 
 
         <div class="card-40">
 
-          <label>表紙画像</label>
+          <label class="mb-2">表紙画像</label>
           <div class="custom-file file-img">
-            <input required type="file" name="bookImage" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+            <input required type="file" name="bookImage" th:value="*{bookImage}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
             <label class="custom-file-label" for="inputGroupFile04">表紙画像を選択してください</label>
           </div>
 
@@ -64,9 +95,9 @@
 
         <div class="card-40">
 
-          <label>書籍ファイル</label>
+          <label class="mb-2">書籍ファイル</label>
           <div class="custom-file file-epub">
-            <input required type="file" name="bookContent" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+            <input required type="file" name="bookContent" th:value="*{bookContent}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
             <label class="custom-file-label" for="inputGroupFile04">書籍ファイル(EPUB形式)を選択してください</label>
           </div>
 
@@ -89,7 +120,7 @@
 
         <div class="button-area">
 
-          <input type="submit" class="btn btn-primary link-button" role="button" value="書籍を投稿">
+          <button type="submit" class="btn btn--blue link-button" role="button">書籍を投稿</button>
 
         </div>
 
@@ -98,6 +129,15 @@
 
 
   </div>
+  <!-- .content -->
+
+  </div>
+  <!-- ajax-result -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+  <script>
+    bsCustomFileInput.init();
+  </script>
 
 </body>
 

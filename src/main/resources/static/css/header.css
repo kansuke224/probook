@@ -96,7 +96,7 @@ header form .button1 i{
     vertical-align: middle;
 }
 /*----------search----------*/
-.input-group{
+.search-input-group{
     max-width: 550px;
     width: 100%;
 }

@@ -1,10 +1,10 @@
 <header xmlns:th="http://www.thymeleaf.org" th:fragment="header_fragment">
   <h1>
-    <a href="index.html">PROBOOK</a>
+    <a th:href="@{/index/}">PROBOOK</a>
   </h1>
 
   <form method="post" action="search.html">
-  <div class="input-group">
+  <div class="input-group search-input-group">
       <div class="input-group-prepend dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle condition-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">条件</button>
         <div class="dropdown-menu p-3">

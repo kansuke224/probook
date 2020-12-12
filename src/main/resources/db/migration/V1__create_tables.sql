@@ -42,11 +42,13 @@ create table purchase (
 -- 書籍
 --* restorefromtemptable
 create table book (
-  book_id int not null
+  book_id int
   , book_name varchar2(500) not null
   , book_description varchar2(2000) not null
   , book_price int not null
-  , book_published_date date not null
+  , book_published_date date default sysdate not null
+  , file_name varchar2(20) not null
+  , image_ext_num varchar2(10) not null
   , user_id int not null
   , genre_id int not null
   , constraint book_pkc primary key (book_id)

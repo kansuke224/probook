@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/*
 .flex {
   display: flex;
   align-items: center;
@@ -15,6 +16,7 @@
 .juco-start {
   justify-content: flex-start;
 }
+*/
 
 
 .wrap-900 {
@@ -29,7 +31,7 @@
 }
 
 .image-color-input {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   width: 300px;
   margin-right: auto;
 }

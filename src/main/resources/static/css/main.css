@@ -52,12 +52,25 @@ bootstrapのボタンを色だけ変更する
 .flex {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 
 .juco-left {
   justify-content: left;
 }
 
+.juco-start {
+  justify-content: flex-start;
+}
+
 .alit-center {
   align-items: center;
+}
+
+.alit-start {
+  align-items: start;
 }

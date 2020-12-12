@@ -26,8 +26,11 @@ public class GenreForm {
   private String genreName;
 
   @NotBlank
-  @Size(max = 1)
-  @Pattern(regexp = "^[a-zA-Z0-9(), ]*$")
+  // @Pattern(regexp = "^[a-zA-Z0-9(), ]*$", message = "")
+  @Pattern(
+      regexp = "^rgba\\(((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\,\\s?){3}(0|0?\\.\\d+|1|1\\.0+)\\)$",
+      message = "rgba()の形式ではありません"
+  )
   private String genreColor;
 
 }
