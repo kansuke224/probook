@@ -1,0 +1,1 @@
+select bookid_seq.nextval from dual;
