@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.seasar.doma.jdbc.Result;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -73,7 +72,7 @@ public class BookService {
     }
 
     Path uploadfile = Paths
-        .get("/Users/nhs90453/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
+        .get("C:/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
 
     try (OutputStream os = Files.newOutputStream(uploadfile, StandardOpenOption.CREATE)) {
       byte[] bytes = file.getBytes();
