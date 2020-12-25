@@ -26,107 +26,143 @@
     <div class="h2-box flex alit-center">
       <h2>投稿書籍管理</h2>
       <!-- 検索、新規追加ボタン -->
-      <form method="get" th:action="@{/postBook/new}" class="flex alit-center" id="combo-search-form">
+      <form method="get" th:action="@{/postBook/combo}" class="flex alit-center" id="combo-search-form">
+        <div th:if="${dto}">
+          <div style="display: none;" th:text="${dto.bookId}" id="bookIdDiv"></div>
+        </div>
 
         <input type="text" id="combobox1">
         <img th:src="@{/images/btn.png}" id="combo-img" style="display: none">
 
-        <button type="submit" th:formaction="@{/postBook/edit}" class="btn btn-success btn-sm ml-2" id="post-book-search-btn">検索</button>
-        <button type="submit" th:formaction="@{/postBook/new}" class="btn btn--blue btn-sm ml-2">新規</button>
+        <button type="submit" class="btn btn-success btn-sm ml-2" id="post-book-search-btn" value="search">検索</button>
+        <button type="submit" class="btn btn--blue btn-sm ml-2" id="post-book-new-btn" value="new">新規</button>
 
       </form>
 
     </div>
 
+    <!-- ajaxで取得したcontentFragmentをajaxResult.htmlに指定して部分更新を行う -->
+    <div id="ajaxResultMain">
 
-    <p class="heading3">タイトル、作者名、値段、表紙画像、書籍ファイル(EPUB形式)を入力してください</p>
+      <div class="content-main" th:fragment="contentMainFragment">
 
-
-    <form method="post" th:action="${kbn} == 'new' ? @{/postBook/new} : @{/postBook/edit}" th:object="${postBookForm}" enctype="multipart/form-data" id="post-book-form">
-
-      <label class="mb-2">タイトル</label>
-      <div class="input-group mb-3">
-        <input required type="text" th:value="*{bookName}" name="bookName" class="form-control input-wid100" aria-label="title" aria-describedby="basic-addon1">
-      </div>
-
-      <!--
-      <label class="mb-2">作者名</label>
-      <div class="input-group mb-3">
-        <input required type="text" name="authorName" class="form-control input-wid100" aria-label="author" aria-describedby="basic-addon1">
-      </div>
-       -->
-
-      <label class="mb-2">ジャンル</label>
-      <div class="input-group mb-5">
-        <select class="custom-select" name="genreId" th:value="*{genreId}">
-          <option selected>ジャンルを選択してください</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-
-      <label class="mb-2" for="textarea1">本の説明</label>
-      <div class="input-group mb-3">
-        <textarea id="textarea1" name="bookDescription" th:value="*{bookDescription}" class="form-control input-wid100"></textarea>
-      </div>
-
-      <label class="mb-2">値段</label>
-      <div class="input-group mb-3 wid-100px">
-        <input required type="number" name="bookPrice" th:value="*{bookPrice}" class="form-control input-px price aaa" aria-label="price" aria-describedby="basic-addon1">
-        <span>円</span>
-      </div>
+        <p class="heading3">タイトル、作者名、値段、表紙画像、書籍ファイル(EPUB形式)を入力してください</p>
 
 
+        <form method="post" th:action="${kbn} == 'new' ? @{/postBook/new} : @{/postBook/edit}" th:object="${postBookForm}" enctype="multipart/form-data" id="post-book-form">
 
-      <div class="flex-post-book">
-
-
-        <div class="card-40">
-
-          <label class="mb-2">表紙画像</label>
-          <div class="custom-file file-img">
-            <input required type="file" name="bookImage" th:value="*{bookImage}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">表紙画像を選択してください</label>
+          <div th:if="${dto}">
+            <input type="hidden" th:value="${dto.bookId}" name="bookId">
           </div>
 
-        </div><!-- card-40 -->
-
-
-        <div class="card-40">
-
-          <label class="mb-2">書籍ファイル</label>
-          <div class="custom-file file-epub">
-            <input required type="file" name="bookContent" th:value="*{bookContent}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="inputGroupFile04">書籍ファイル(EPUB形式)を選択してください</label>
+          <label class="mb-2">タイトル</label>
+          <div class="input-group mb-3">
+            <input required type="text" th:value="*{bookName}" name="bookName" class="form-control input-wid100" aria-label="title" aria-describedby="basic-addon1">
           </div>
 
-        </div><!-- card-40 -->
+          <!--
+          <label class="mb-2">作者名</label>
+          <div class="input-group mb-3">
+            <input required type="text" name="authorName" class="form-control input-wid100" aria-label="author" aria-describedby="basic-addon1">
+          </div>
+           -->
+
+          <label class="mb-2">ジャンル</label>
+          <div class="input-group mb-5">
+            <select class="custom-select" name="genreId" th:value="*{genreId}">
+              <option selected>ジャンルを選択してください</option>
+              <option th:each="genre : ${genreList}"
+                    th:value="${genre.genreId}"
+                    th:text="${genre.genreName}"
+                    th:selected="${genre.genreId} == ${postBookForm.genreId}"></option>
+            </select>
+            <!--
+            <select id="singleSelect" name="selectedItem">
+                <option th:each="item : ${selectItems}"
+                    th:value="${item.key}"
+                    th:text="${item.value}"
+                    th:selected="${item.key} == 2">singleSelect</option>
+            </select>
+             -->
+          </div>
+
+          <label class="mb-2" for="textarea1">本の説明</label>
+          <div class="input-group mb-3">
+            <textarea id="textarea1" name="bookDescription" th:text="*{bookDescription}" class="form-control input-wid100"></textarea>
+          </div>
+
+          <label class="mb-2">値段</label>
+          <div class="input-group mb-3 wid-100px">
+            <input required type="number" name="bookPrice" th:value="*{bookPrice}" class="form-control input-px price aaa" aria-label="price" aria-describedby="basic-addon1">
+            <span>円</span>
+          </div>
 
 
-      </div><!-- flex -->
+
+          <div class="flex-post-book">
+
+
+            <div class="card-40">
+
+              <label class="mb-2">表紙画像</label>
+              <div class="custom-file file-img">
+                <div th:if="${kbn} == 'edit'">
+                  <input type="file" name="bookImage" th:value="*{bookImage}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                  <label class="custom-file-label" for="inputGroupFile04">更新する場合のみ選択してください</label>
+                </div>
+                <div th:unless="${kbn} == 'edit'">
+                  <input required type="file" name="bookImage" th:value="*{bookImage}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                  <label class="custom-file-label" for="inputGroupFile04">表紙画像を選択してください</label>
+                </div>
+
+              </div>
+
+            </div><!-- card-40 -->
+
+
+            <div class="card-40">
+
+              <label class="mb-2">書籍ファイル</label>
+              <div class="custom-file file-epub">
+                <div th:if="${kbn} == 'edit'">
+                  <input type="file" name="bookContent" th:value="*{bookContent}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                  <label class="custom-file-label" for="inputGroupFile04">更新する場合のみ選択してください</label>
+                </div>
+                <div th:unless="${kbn} == 'edit'">
+                  <input required type="file" name="bookContent" th:value="*{bookContent}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                  <label class="custom-file-label" for="inputGroupFile04">表紙画像を選択してください</label>
+                </div>
+              </div>
+
+            </div><!-- card-40 -->
+
+
+          </div><!-- flex -->
 
 
 
-        <div class="image-preview">
+            <div class="image-preview">
 
-          <figure>
-           <img src="images/bg1.png" alt="表紙画像">
-          </figure>
+              <figure>
+               <img src="images/bg1.png" alt="表紙画像">
+              </figure>
 
-        </div>
-
-
-
-        <div class="button-area">
-
-          <button type="submit" class="btn btn--blue link-button" role="button">書籍を投稿</button>
-
-        </div>
-
-      </form>
+            </div>
 
 
+
+            <div class="button-area">
+
+              <button type="submit" class="btn btn--blue link-button" role="button">書籍を投稿</button>
+
+            </div>
+
+          </form>
+
+      </div>
+      <!-- main-content -->
+    </div>
+    <!-- ajaxResultMain -->
 
   </div>
   <!-- .content -->

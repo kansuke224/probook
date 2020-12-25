@@ -9,6 +9,8 @@ import lombok.Data;
 @Data
 public class PostBookForm {
 
+  private Integer bookId;
+
   @NotBlank
   private String bookName;
 
@@ -17,7 +19,7 @@ public class PostBookForm {
   private String authorName;
   */
 
-  private Integer genreId;
+  private int genreId;
 
   private Integer bookPrice;
 

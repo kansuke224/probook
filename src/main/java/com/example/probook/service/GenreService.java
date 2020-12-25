@@ -5,6 +5,8 @@
 */
 package com.example.probook.service;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,13 @@ public class GenreService {
     // formの中身をuserdtoにコピー
     BeanUtils.copyProperties(form, dto);
     return dao.insertGenre(dto);
+  }
+
+  /*
+   * ジャンル一覧を取得
+   */
+  public List<GenreDto> selectGenreList() {
+    return dao.selectGenreList();
   }
 
 }

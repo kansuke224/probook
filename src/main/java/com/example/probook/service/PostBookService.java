@@ -25,13 +25,78 @@ import com.example.probook.form.PostBookForm;
 
 
 @Service
-public class BookService {
+public class PostBookService {
 
   @Autowired
   BookDao dao;
 
+  // dbの拡張子番号に対応した配列
   private String[] extArray = {".jpg", ".png"};
 
+  public List<BookDto> selectComboList(int userId) {
+    BookDto dto = new BookDto();
+    dto.setUserId(userId);
+    List<BookDto> comboList = dao.selectPostBooks(dto);
+    return comboList;
+  }
+
+  /*
+   * 編集フォーム表示
+   */
+  public BookDto selectBook(PostBookForm form) {
+    BookDto dto = new BookDto();
+    // formの中身をuserdtoにコピー
+    BeanUtils.copyProperties(form, dto);
+    dto = dao.selectBook(dto);
+    return dto;
+  }
+
+
+  /*
+   * 投稿書籍編集処理
+   */
+  public Map<String, Object> updateBook(PostBookForm form) {
+
+    BookDto dto = new BookDto();
+    // formの中身をuserdtoにコピー
+    BeanUtils.copyProperties(form, dto);
+
+    // filename,image_ext_numを取得するために保存済みの情報を取得
+    BookDto savedDto = dao.selectBook(dto);
+    dto.setFileName(savedDto.getFileName());
+    dto.setImageExtNum(savedDto.getImageExtNum());
+
+    String filename = savedDto.getFileName();
+
+    // ファイルアップロード処理
+    if (form.getBookImage() != null) {
+      int imageExtNum = uploadFile(form.getBookImage(), "bookImage", filename);
+      dto.setImageExtNum(imageExtNum);
+    }
+    if (form.getBookContent() != null) {
+      uploadFile(form.getBookContent(), "bookContent", filename);
+    }
+
+    // update処理  更新件数
+    int updateNum = dao.updateBook(dto);
+
+    PostBookForm editForm = new PostBookForm();
+    // update結果のdtoの中身をeditFormにコピー
+    BeanUtils.copyProperties(dto, editForm);
+
+    Map<String, Object> resultMap = new HashMap<>();
+    resultMap.put("updateNum", updateNum);
+    resultMap.put("editForm", editForm);
+
+    return resultMap;
+
+  }
+
+
+
+  /*
+   * 新規書籍投稿処理
+   */
   public Map<String, Object> newBook(PostBookForm form, int userId) {
 
     String filename = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS").format(LocalDateTime.now());
@@ -71,8 +136,9 @@ public class BookService {
       extention = file.getOriginalFilename().substring(dot).toLowerCase();
     }
 
-    Path uploadfile = Paths
-        .get("C:/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
+    // TODO 環境によってpathを変更する
+    Path uploadfile = Paths.get("/Users/nhs90453/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
+    // Path uploadfile = Paths.get("C:/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
 
     try (OutputStream os = Files.newOutputStream(uploadfile, StandardOpenOption.CREATE)) {
       byte[] bytes = file.getBytes();
