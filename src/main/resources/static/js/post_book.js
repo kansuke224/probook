@@ -158,7 +158,7 @@ function setPostSubmit() {
         $('#ajaxResult').html(result);
         // contentをまるごと更新しているので、初期setupを更新時に行わないといけない
         // (clickイベント等)
-        // $("#combo-search-form").prepend($('<input type="text" id="combobox1">'));
+        $("#combo-search-form").prepend($('<input type="text" id="combobox1">'));
         setup();
       },
 

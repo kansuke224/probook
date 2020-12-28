@@ -85,6 +85,7 @@ public class PostBookController {
     ){
 
     if (result.hasErrors()) {
+      System.out.println(result.getAllErrors());
       model.addAttribute("form", form);
       model.addAttribute("errorMsg", "入力内容が正しくありません");
       return "/post_book :: contentFragment";
@@ -92,13 +93,16 @@ public class PostBookController {
 
     Map<String, Object> updateResult = service.updateBook(form);
 
+    // ジャンル一覧をmodelに格納
+    model.addAttribute("genreList", genreService.selectGenreList());
+
     if ((int) updateResult.get("updateNum") == 0) {
       // insert失敗
-      model.addAttribute("form", form);
+      model.addAttribute("postBookForm", form);
       model.addAttribute("errorMsg", "ジャンル登録で問題が発生しました");
     } else {
       // insert成功
-      model.addAttribute("form", (PostBookForm) updateResult.get("editForm"));
+      model.addAttribute("postBookForm", (PostBookForm) updateResult.get("editForm"));
       model.addAttribute("successMsg", "ジャンル登録が完了しました");
     }
 
@@ -112,6 +116,8 @@ public class PostBookController {
   // 新規書籍投稿フォームを表示
   @RequestMapping(value="/new", method=RequestMethod.GET)
   public String newShow(PostBookForm form, @ModelAttribute UserDto user, Model model) {
+    // ジャンル一覧をmodelに格納
+    model.addAttribute("genreList", genreService.selectGenreList());
     model.addAttribute("user", user);
     model.addAttribute("postBookForm", form);
     model.addAttribute("kbn", "new");
@@ -137,6 +143,9 @@ public class PostBookController {
     }
 
     Map<String, Object> insertResult = service.newBook(form, user.getUserId());
+
+    // ジャンル一覧をmodelに格納
+    model.addAttribute("genreList", genreService.selectGenreList());
 
     if ((int) insertResult.get("updateNum") == 0) {
       // insert失敗

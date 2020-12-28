@@ -137,8 +137,8 @@ public class PostBookService {
     }
 
     // TODO 環境によってpathを変更する
-    Path uploadfile = Paths.get("/Users/nhs90453/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
-    // Path uploadfile = Paths.get("C:/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
+    // Path uploadfile = Paths.get("/Users/nhs90453/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
+    Path uploadfile = Paths.get("C:/workspace/uploadfile/" + fileKbn + "/" + filename + extention);
 
     try (OutputStream os = Files.newOutputStream(uploadfile, StandardOpenOption.CREATE)) {
       byte[] bytes = file.getBytes();
